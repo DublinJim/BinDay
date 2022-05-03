@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="623.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.binday.HelloController">
+   <children>
+      <Button layoutX="313.0" layoutY="72.0" mnemonicParsing="false" text="West of Stone St" />
+      <Button layoutX="198.0" layoutY="72.0" mnemonicParsing="false" text="East of Stone St" />
+      <Button layoutX="332.0" layoutY="129.0" mnemonicParsing="false" onMouseClicked="#showTomorrow" text="Tomorrow" />
+      <Button layoutX="212.0" layoutY="129.0" mnemonicParsing="false" onMouseClicked="#showToday" prefHeight="25.0" prefWidth="71.0" text="Today" />
+      <Text fx:id="dateDisplay" layoutX="283.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="81.13671875" />
+      <Text fx:id="andTodayis" layoutX="283.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="141.13671875" />
+      <ImageView fx:id="imagePane1" fitHeight="150.0" fitWidth="200.0" layoutX="222.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../testImages/Graphics/61WU7Z7qFWL._SL1500_.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

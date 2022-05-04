@@ -7,8 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
 public class TimestringMaker {
-    private
-    String day;
+    private String day;
     String month;
     int date;
     Calendar cal = Calendar.getInstance();
@@ -18,7 +17,7 @@ public class TimestringMaker {
     public TimestringMaker() {
 
 
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         String formattedDate = ld.format(myFormatObj);
 
 
@@ -26,14 +25,18 @@ public class TimestringMaker {
 
 
     public String getMonth() {
-
+        month = String.valueOf(ld.getMonth());
         return month;
     }
 
     public String getDay() {
-        String day = String.valueOf(ld.getDayOfWeek());
+        day = String.valueOf(ld.getDayOfWeek());
+
         return day;
     }
 
-
+    public int getDate() {
+        date= ld.getDayOfMonth();
+        return date;
+    }
 }

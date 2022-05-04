@@ -53,11 +53,11 @@ public class HelloController implements Runnable {
             new BankHoliday("Victoria Day", "MONDAY", "May", 23, 2022),
             new BankHoliday("Canada Day", "FRIDAY", "Jul", 1, 2022),
             new BankHoliday("Labour Day", "MONDAY", "Sept", 5, 2022),
-            new BankHoliday("Thanksgiving",	"MONDAY", "Oct", 10, 2022),
-            new BankHoliday( "Christmas",	"SUNDAY", "Dec", 25, 2022),
-            new BankHoliday("Boxing Day"	,"MONDAY", "Dec", 26, 2022)
+            new BankHoliday("Thanksgiving", "MONDAY", "Oct", 10, 2022),
+            new BankHoliday("Christmas", "SUNDAY", "Dec", 25, 2022),
+            new BankHoliday("Boxing Day", "MONDAY", "Dec", 26, 2022)
 
-            );
+    );
 
 //    New Year's Day	Mon, Jan 3, 2022
 //    Family Day	Mon, Feb 21, 2022
@@ -82,10 +82,10 @@ public class HelloController implements Runnable {
         andTodayis.setText(timestringMaker.getDay());
         String today = timestringMaker.getDay();
         andTodayis.setText(today);
-        System.out.println("Day of the week is "+today);
+        System.out.println("Day of the week is " + today);
         String monthNow = timestringMaker.getMonth();
-        System.out.println("Month is "+monthNow);
-        int dayNum= timestringMaker.getDate();
+        System.out.println("Month is " + monthNow);
+        int dayNum = timestringMaker.getDate();
         System.out.println("date is " + dayNum);
 
 

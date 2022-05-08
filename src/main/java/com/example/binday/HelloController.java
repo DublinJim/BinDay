@@ -2,12 +2,13 @@ package com.example.binday;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -15,49 +16,48 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Objects;
 
 public class HelloController implements Runnable {
     @FXML
     private ImageView imagePane1;
 
-    @FXML
-    private Label welcomeText;
+
     @FXML
     private Text andTodayis;
+    @FXML
+    private Text message1;
 
     public HelloController() throws FileNotFoundException {
     }
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
 
     //non fx vars
     static TimestringMaker timestringMaker;
-    Boolean westOfKingSt;
-    Boolean eastOfKingSt;
+    Boolean westOStoneSt;
+    Boolean eastOfStoneSt;
 
 
     @Override
     public void run() {
+        ArrayList<String> cars = new ArrayList<>();
+        ObservableList<BankHoliday> observableList
+                = FXCollections.observableArrayList(new BankHoliday
+                ("New Year's Day", "MONDAY", "Jan", 3, 2022),
+                new BankHoliday("Family", "MONDAY", "Feb", 21, 2022),
+                new BankHoliday("Good Friday", "FRIDAY", "Apr", 15, 2022),
+                new BankHoliday("Victoria Day", "MONDAY", "May", 23, 2022),
+                new BankHoliday("Canada Day", "FRIDAY", "Jul", 1, 2022),
+                new BankHoliday("Labou" + "r Day", "MONDAY", "Sept", 5, 2022),
+                new BankHoliday("Thanksgiving", "MONDAY", "Oct", 10, 2022),
+                new BankHoliday("Christmas", "SUNDAY", "Dec", 25, 2022),
+                new BankHoliday("Boxing Day", "MONDAY", "Dec", 26, 2022)
+
+        );
 
     }
 
-    ArrayList<String> cars = new ArrayList<String>();
 
-    ObservableList<BankHoliday> observableList = FXCollections.observableArrayList(
-            new BankHoliday("New Year's Day", "MONDAY", "Jan", 3, 2022),
-            new BankHoliday("Family", "MONDAY", "Feb", 21, 2022),
-            new BankHoliday("Good Friday", "FRIDAY", "Apr", 15, 2022),
-            new BankHoliday("Victoria Day", "MONDAY", "May", 23, 2022),
-            new BankHoliday("Canada Day", "FRIDAY", "Jul", 1, 2022),
-            new BankHoliday("Labour Day", "MONDAY", "Sept", 5, 2022),
-            new BankHoliday("Thanksgiving", "MONDAY", "Oct", 10, 2022),
-            new BankHoliday("Christmas", "SUNDAY", "Dec", 25, 2022),
-            new BankHoliday("Boxing Day", "MONDAY", "Dec", 26, 2022)
-
-    );
 
 //    New Year's Day	Mon, Jan 3, 2022
 //    Family Day	Mon, Feb 21, 2022
@@ -82,27 +82,23 @@ public class HelloController implements Runnable {
         andTodayis.setText(timestringMaker.getDay());
         String today = timestringMaker.getDay();
         andTodayis.setText(today);
-        System.out.println("Day of the week is " + today);
         String monthNow = timestringMaker.getMonth();
-        System.out.println("Month is " + monthNow);
         int dayNum = timestringMaker.getDate();
-        System.out.println("date is " + dayNum);
 
+        System.out.println("Day of the week is " + today);
+        System.out.println("The date is " + dayNum);
+        System.out.println("Month is " + monthNow);
 
-        if (today == "THURSDAY" || today == "FRIDAY") {
+        if (Objects.equals(today, "THURSDAY") || Objects.equals(today, "FRIDAY")) {
             dateDisplay.setText("Collection Today");
             imagePane1.setImage(fullBinCardboard);
 
         } else {
             dateDisplay.setText("No collection");
-
-
             imagePane1.setImage(noCollection);
         }
 
-
     }
-
 
     @FXML
     void showTomorrow(MouseEvent event) throws ParseException {
@@ -113,4 +109,18 @@ public class HelloController implements Runnable {
 
     }
 
+    @FXML
+    void eastOfStoneStreet(ActionEvent event) {
+        message1.setVisible(true);
+        eastOfStoneSt = true;
+        message1.setText("East of Stone Street");
+
+    }
+
+    @FXML
+    void westOfStoneStreet(ActionEvent event) {
+        westOStoneSt = true;
+        message1.setVisible(true);
+        message1.setText("West of Stone Street");
+    }
 }

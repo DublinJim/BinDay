@@ -7,17 +7,19 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="623.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.binday.HelloController">
-   <children>
-      <Button layoutX="313.0" layoutY="72.0" mnemonicParsing="false" text="West of Stone St" />
-      <Button layoutX="198.0" layoutY="72.0" mnemonicParsing="false" text="East of Stone St" />
-      <Button layoutX="332.0" layoutY="129.0" mnemonicParsing="false" onMouseClicked="#showTomorrow" text="Tomorrow" />
-      <Button layoutX="212.0" layoutY="129.0" mnemonicParsing="false" onMouseClicked="#showToday" prefHeight="25.0" prefWidth="71.0" text="Today" />
-      <Text fx:id="dateDisplay" layoutX="283.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="81.13671875" />
-      <Text fx:id="andTodayis" layoutX="283.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="141.13671875" />
-      <ImageView fx:id="imagePane1" fitHeight="150.0" fitWidth="200.0" layoutX="222.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../testImages/Graphics/61WU7Z7qFWL._SL1500_.jpg" />
-         </image>
-      </ImageView>
-   </children>
+
+      <Button layoutX="313.0" layoutY="72.0" mnemonicParsing="false" onAction="#westOfStoneStreet" text="West of Stone St" />
+      <Button layoutX="198.0" layoutY="72.0" mnemonicParsing="false" onAction="#eastOfStoneStreet" text="East of Stone St" />
+   
+      <Button layoutX="262.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#showToday" prefHeight="25.0" prefWidth="71.0" text="Today" />
+      <Text fx:id="dateDisplay" layoutX="257.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" textAlignment="CENTER" wrappingWidth="81.13671875" AnchorPane.leftAnchor="257.0" AnchorPane.rightAnchor="284.86328125" />
+      <Text fx:id="andTodayis" layoutX="227.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="141.13671875" />
+   <ImageView fx:id="imagePane1" fitHeight="150.0" fitWidth="200.0" layoutX="222.0" layoutY="224.0" pickOnBounds="true"
+              preserveRatio="true" AnchorPane.bottomAnchor="330.0" AnchorPane.leftAnchor="222.0"
+              AnchorPane.rightAnchor="222.0" AnchorPane.topAnchor="224.0">
+      <Image url="@../../../testImages/Graphics/61WU7Z7qFWL._SL1500_.jpg"/>
+   </ImageView>
+      <Text fx:id="message1" layoutX="223.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" visible="false" wrappingWidth="150.0" />
+      
+
 </AnchorPane>

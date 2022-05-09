@@ -43,12 +43,12 @@ public class HelloController implements Runnable {
         ArrayList<String> cars = new ArrayList<>();
         ObservableList<BankHoliday> observableList
                 = FXCollections.observableArrayList(new BankHoliday
-                ("New Year's Day", "MONDAY", "Jan", 3, 2022),
+                        ("New Year's Day", "MONDAY", "Jan", 3, 2022),
                 new BankHoliday("Family", "MONDAY", "Feb", 21, 2022),
                 new BankHoliday("Good Friday", "FRIDAY", "Apr", 15, 2022),
                 new BankHoliday("Victoria Day", "MONDAY", "May", 23, 2022),
                 new BankHoliday("Canada Day", "FRIDAY", "Jul", 1, 2022),
-                new BankHoliday("Labou" + "r Day", "MONDAY", "Sept", 5, 2022),
+                new BankHoliday("Labour Day", "MONDAY", "Sept", 5, 2022),
                 new BankHoliday("Thanksgiving", "MONDAY", "Oct", 10, 2022),
                 new BankHoliday("Christmas", "SUNDAY", "Dec", 25, 2022),
                 new BankHoliday("Boxing Day", "MONDAY", "Dec", 26, 2022)
@@ -56,7 +56,6 @@ public class HelloController implements Runnable {
         );
 
     }
-
 
 
 //    New Year's Day	Mon, Jan 3, 2022

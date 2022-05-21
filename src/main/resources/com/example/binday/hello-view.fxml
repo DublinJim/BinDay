@@ -4,22 +4,28 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="623.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.binday.HelloController">
-
-      <Button layoutX="313.0" layoutY="72.0" mnemonicParsing="false" onAction="#westOfStoneStreet" text="West of Stone St" />
-      <Button layoutX="198.0" layoutY="72.0" mnemonicParsing="false" onAction="#eastOfStoneStreet" text="East of Stone St" />
-   
-      <Button layoutX="262.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#showToday" prefHeight="25.0" prefWidth="71.0" text="Today" />
-      <Text fx:id="dateDisplay" layoutX="257.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" textAlignment="CENTER" wrappingWidth="81.13671875" AnchorPane.leftAnchor="257.0" AnchorPane.rightAnchor="284.86328125" />
-      <Text fx:id="andTodayis" layoutX="227.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="141.13671875" />
-   <ImageView fx:id="imagePane1" fitHeight="150.0" fitWidth="200.0" layoutX="222.0" layoutY="224.0" pickOnBounds="true"
-              preserveRatio="true" AnchorPane.bottomAnchor="330.0" AnchorPane.leftAnchor="222.0"
-              AnchorPane.rightAnchor="222.0" AnchorPane.topAnchor="224.0">
-      <Image url="@../../../testImages/Graphics/61WU7Z7qFWL._SL1500_.jpg"/>
-   </ImageView>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="623.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.binday.HelloController">
+   <BorderPane fx:id="borderPane1" layoutY="60.0" prefHeight="528.0" prefWidth="623.0">
+      <right>
+      
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#westOfStoneStreet" text="West of Stone St" BorderPane.alignment="CENTER" />
+      </right>
+      <left>
+            <Button mnemonicParsing="false" onAction="#eastOfStoneStreet" text="East of Stone St" BorderPane.alignment="CENTER" />
+      </left>
+      <bottom>
+         
+            <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#showToday" prefHeight="25.0" prefWidth="71.0" text="Today" BorderPane.alignment="CENTER" />
+      </bottom></BorderPane>
       <Text fx:id="message1" layoutX="223.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" visible="false" wrappingWidth="150.0" />
+      <Text fx:id="andTodayis" layoutX="227.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="141.13671875" />
+      <Text fx:id="dateDisplay" layoutX="257.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" textAlignment="CENTER" wrappingWidth="81.13671875" AnchorPane.leftAnchor="257.0" AnchorPane.rightAnchor="284.86328125" />
+   <ImageView fx:id="imagePane1" fitHeight="150.0" fitWidth="200.0" layoutX="222.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="330.0" AnchorPane.leftAnchor="222.0" AnchorPane.rightAnchor="222.0" AnchorPane.topAnchor="224.0">
+      <Image url="@../../../testImages/Graphics/61WU7Z7qFWL._SL1500_.jpg" />
+   </ImageView>
       
 
 </AnchorPane>

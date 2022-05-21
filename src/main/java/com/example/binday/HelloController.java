@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 
 
@@ -21,7 +22,8 @@ import java.util.Objects;
 public class HelloController implements Runnable {
     @FXML
     private ImageView imagePane1;
-
+    @FXML
+    private BorderPane borderPane1;
 
     @FXML
     private Text andTodayis;
@@ -100,7 +102,7 @@ public class HelloController implements Runnable {
     }
 
     @FXML
-    void showTomorrow(MouseEvent event) throws ParseException {
+    void showTomorrow() throws ParseException {
         String sourceDate = "2012-02-29";
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Date myDate = format.parse(sourceDate);

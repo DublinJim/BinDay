@@ -102,7 +102,7 @@ public class HelloController implements Runnable {
             dateDisplay.setText("No collection");
             imagePane1.setImage(noCollection);
         }
-
+        borderPane1.setVisible(false);
     }
 
     @FXML

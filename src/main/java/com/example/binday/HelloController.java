@@ -4,10 +4,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 
@@ -56,6 +58,8 @@ public class HelloController implements Runnable {
                 new BankHoliday("Boxing Day", "MONDAY", "Dec", 26, 2022)
 
         );
+
+        Image backgroundImage = new Image("C:\\Users\\dubli\\IdeaProjects\\BinDay\\src\\main\\resources\\com\\example\\binday\\background.gif");
 
     }
 
@@ -115,6 +119,7 @@ public class HelloController implements Runnable {
         message1.setVisible(true);
         eastOfStoneSt = true;
         message1.setText("East of Stone Street");
+
 
     }
 

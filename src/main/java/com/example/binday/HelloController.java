@@ -5,11 +5,13 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
 
@@ -35,19 +37,18 @@ public class HelloController implements Runnable {
     public HelloController() throws FileNotFoundException {
     }
 
-
+    public static ObservableList<BankHoliday> observableList;
     //non fx vars
     static TimestringMaker timestringMaker;
     Boolean westOStoneSt;
     Boolean eastOfStoneSt;
-
+    public static   ArrayList<BankHoliday> holBank = new ArrayList<>();
 
     @Override
     public void run() {
-        ArrayList<String> cars = new ArrayList<>();
-        ObservableList<BankHoliday> observableList
-                = FXCollections.observableArrayList(new BankHoliday
-                        ("New Year's Day", "MONDAY", "Jan", 3, 2022),
+
+
+        observableList = FXCollections.observableArrayList(new BankHoliday("New Year's Day", "MONDAY", "Jan", 3, 2022),
                 new BankHoliday("Family", "MONDAY", "Feb", 21, 2022),
                 new BankHoliday("Good Friday", "FRIDAY", "Apr", 15, 2022),
                 new BankHoliday("Victoria Day", "MONDAY", "May", 23, 2022),
@@ -59,7 +60,23 @@ public class HelloController implements Runnable {
 
         );
 
+        holBank.add(new BankHoliday("New Year's Day", "MONDAY", "Jan", 3, 2022));
+        holBank.add(new BankHoliday("Family", "MONDAY", "Feb", 21, 2022));
+        holBank.add(new BankHoliday("Victoria Day", "MONDAY", "May", 23, 2022));
+        holBank.add(new BankHoliday("Canada Day", "FRIDAY", "Jul", 1, 2022));
+        holBank.add(new BankHoliday("Labour Day", "MONDAY", "Sept", 5, 2022));
+        holBank.add(new BankHoliday("Thanksgiving", "MONDAY", "Oct", 10, 2022));
+        holBank.add(new BankHoliday("Christmas", "SUNDAY", "Dec", 25, 2022));
+        holBank.add(new BankHoliday("Boxing Day", "MONDAY", "Dec", 26, 2022));
+
+
         Image backgroundImage = new Image("C:\\Users\\dubli\\IdeaProjects\\BinDay\\src\\main\\resources\\com\\example\\binday\\background.gif");
+
+        Rectangle rect = new Rectangle(200, 200, Color.RED);
+        ScrollPane s1 = new ScrollPane();
+        s1.setPrefSize(120, 120);
+        s1.setContent(rect);
+
 
     }
 
@@ -83,6 +100,8 @@ public class HelloController implements Runnable {
 
     @FXML
     void showToday(MouseEvent event) {
+
+
         timestringMaker = new TimestringMaker();
         andTodayis.setText(timestringMaker.getDay());
         String today = timestringMaker.getDay();
@@ -103,6 +122,8 @@ public class HelloController implements Runnable {
             imagePane1.setImage(noCollection);
         }
         borderPane1.setVisible(false);
+        System.out.println("List "+holBank.get(1));
+
     }
 
     @FXML
@@ -130,3 +151,4 @@ public class HelloController implements Runnable {
         message1.setText("West of Stone Street");
     }
 }
+
